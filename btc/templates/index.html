@@ -18,6 +18,7 @@
   </head>
   <body>
     <div id="content">
+      <button onclick="deslogar();" type="button" id="logout">Encerrar Sessão <i class="fas fa-power-off" style="margin-left: 10px"></i></button>
       <div id="contentLogin">
         <div class="toolName">
           <img src="{% static 'btc/img/btc.png' %}" class="logo">
@@ -46,36 +47,44 @@
             <div id="currency">
               <div id="bccur">
                 <img src="{% static 'btc/img/iconB.png' %}" id="iconB">
-                <input id="inBit" type="number" value="1">
+                <input oninput="getMoney();" onchange="getMoney();" min="1" id="inBit" type="number" value="1">
               </div>
               <div id="otcur">
                 <div class="stateCurrency">
                   <p class="text titleCur">USD</p>
-                  <span class="convertShow">00,00</span>
+                  <span class="convertShow"></span>
                 </div>
                 <div class="stateCurrency">
                   <p class="text titleCur">BRL</p>
-                  <span class="convertShow">00,00</span>
+                  <span class="convertShow"></span>
                 </div>
                 <div class="stateCurrency">
                   <p class="text titleCur">EUR</p>
-                  <span class="convertShow">00,00</span>
+                  <span class="convertShow"></span>
                 </div>
                 <div class="stateCurrency">
                   <p class="text titleCur">CAD</p>
-                  <span class="convertShow">00,00</span>
+                  <span class="convertShow"></span>
                 </div>
               </div>
-              <div class="buttonSlide">
-                <button type="button" id="btnS"></button>
-                <div id="tampa"></div>
-                <span id="ttampa">Atualizar Valor Monetário</span>
+              <div onclick="confCurrency(); getCurrency();" class="buttonSlide">
+                <button type="button" class="btnS"></button>
+                <div class="tampa"></div>
+                <span class="ttampa">Atualizar Valor Monetário</span>
               </div>
             </div>
           </div>
           <div id="cardB" class="showCard">
-            <div class="">
-
+            <select onchange="getCurrency();" id="targetCurrency">
+              <option value="BRL">BRL</option>
+              <option value="EUR">EUR</option>
+              <option value="CAD">CAD</option>
+            </select>
+            <p class="text" id="vas"><i>Valor Atual:</i> <span id="vaa"></span></p>
+            <input type="number" min="1" id="cva" placeholder="Novo valor">
+            <div id="btns">
+              <button onclick="backCurrency();" type="button" class="btnC" id="bBack">Voltar</button>
+              <button onclick="updateCurrency();" type="button" class="btnC" id="bUp">Atualizar</button>
             </div>
           </div>
         </div>
