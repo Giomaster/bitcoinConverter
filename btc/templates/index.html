@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% load static %}
+    <title>Bitcoin Converter</title>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'btc/css/index.css' %}">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'btc/img/iconB.png' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="{% static 'btc/js/conf.js' %}" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="content">
+      <div id="contentLogin">
+        <div class="toolName">
+          <img src="{% static 'btc/img/btc.png' %}" class="logo">
+          <div class="title">
+            <h1 class="partTitle">Bitcoin</h1>
+            <h1 class="partTitle">Converter</h1>
+          </div>
+        </div>
+        <div id="theLogin">
+          <p class="text">Insira as credenciais:</p>
+          <input type="email" name="email" id="email" class="lbox" placeholder="Email">
+          <input type="password" name="pass" id="pass" class="lbox" placeholder="Senha">
+          <button onclick="loginProcess();" type="button" name="button" id="sentL">Enviar</button>
+        </div>
+      </div>
+      <div id="home">
+        <div class="toolName">
+          <img src="{% static 'btc/img/btc.png' %}" class="logo">
+          <div class="title">
+            <h1 class="partTitle">Bitcoin</h1>
+            <h1 class="partTitle">Converter</h1>
+          </div>
+        </div>
+        <div id="card">
+          <div id="cardF" class="showCard">
+            <div id="currency">
+              <div id="bccur">
+                <img src="{% static 'btc/img/iconB.png' %}" id="iconB">
+                <input id="inBit" type="number" value="1">
+              </div>
+              <div id="otcur">
+                <div class="stateCurrency">
+                  <p class="text titleCur">USD</p>
+                  <span class="convertShow">00,00</span>
+                </div>
+                <div class="stateCurrency">
+                  <p class="text titleCur">BRL</p>
+                  <span class="convertShow">00,00</span>
+                </div>
+                <div class="stateCurrency">
+                  <p class="text titleCur">EUR</p>
+                  <span class="convertShow">00,00</span>
+                </div>
+                <div class="stateCurrency">
+                  <p class="text titleCur">CAD</p>
+                  <span class="convertShow">00,00</span>
+                </div>
+              </div>
+              <div class="buttonSlide">
+                <button type="button" id="btnS"></button>
+                <div id="tampa"></div>
+                <span id="ttampa">Atualizar Valor Monetário</span>
+              </div>
+            </div>
+          </div>
+          <div id="cardB" class="showCard">
+            <div class="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
