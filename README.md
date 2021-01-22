@@ -5,4 +5,9 @@
 
 ## Instalação
 
-Esse serviço foi feito com **Django 3.1.5**. Recomenda-se que ao instalar o Django instale-o em uma *virtual enviroment* para conseguir rodar esse app sem maiores dificuldades. 
+Esse serviço foi feito com **Django 3.1.5**. Recomenda-se que ao instalar o Django instale-o em uma *virtual enviroment* para conseguir rodar esse app sem maiores dificuldades.
+
+### Algumas referências que podem ajudar
+
+* <https://docs.djangoproject.com/en/3.1/topics/install/>
+* <https://docs.python.org/3/tutorial/venv.html>
