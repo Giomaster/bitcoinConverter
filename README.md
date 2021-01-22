@@ -1,6 +1,6 @@
 # bitcoinConverter
 
-![Logo](https://user-images.githubusercontent.com/10145602/105446767-dd683f80-5c83-11eb-86ff-b9280145f579.png)
+![Logo](https://user-images.githubusercontent.com/10145602/105447106-9cbcf600-5c84-11eb-9aaa-aed2750a9741.png)
 
 
 ## Instalação
