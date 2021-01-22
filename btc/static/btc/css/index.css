@@ -35,7 +35,19 @@ textarea:focus, input:focus, select:focus {
 }
 
 ::placeholder {
-  color: #FFF;
+  color: #888;
+}
+
+.lbox::-webkit-input-placeholder { /* Edge */
+  color: #888;
+}
+
+.lbox:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #888;
+}
+
+.lbox::placeholder {
+  color: #888;
 }
 
 #content {
@@ -361,4 +373,20 @@ textarea:focus, input:focus, select:focus {
   align-items: center;
   justify-content: center;
   cursor: pointer
+}
+
+@media only screen and (max-width: 550px) {
+  .toolName {
+    font-size: 1.5em;
+  }
+
+  .logo {
+    display: flex;
+    object-fit: contain;
+    width: 100px;
+  }
+
+  .stateCurrency {
+    width: 100%;
+  }
 }
