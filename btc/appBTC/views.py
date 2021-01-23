@@ -31,8 +31,12 @@ def deslogar(request):
 def api(request, tool):
     if tool == 'login':
         if request.method == "POST":
-            email = request.POST['email']
-            senha = request.POST['password']
+            try:
+                email = request.POST['email']
+                senha = request.POST['password']
+            except KeyError:
+                email = "False"
+                senha = "False"
 
             try : senha = int(senha)
             except ValueError : pass
@@ -62,10 +66,12 @@ def api(request, tool):
 
             try:
                 auth = request.headers['Authorization']
+                auth2 = request.session['token']
             except KeyError:
                 auth = False
+                auth2 = True
 
-            if auth == request.session['token']:
+            if auth == auth2:
                 data = newcur
                 status = 200
             else:
@@ -73,8 +79,12 @@ def api(request, tool):
                 status = 401
         else:
             curAvailable = ["BRL", "EUR", "CAD"]
-            currency = request.POST["currency"]
-            val = request.POST["value"]
+            try:
+                currency = request.POST["currency"]
+                val = request.POST["value"]
+            except KeyError:
+                currency = "FALSE"
+                val = "FALSE"
 
             try : val = int(val)
             except ValueError : val = -1
